@@ -1,0 +1,6 @@
+# Created at 2026-08-27T21:38:06.216
+java.lang.OutOfMemoryError: Java heap space
+
+# Created at 2026-08-27T21:38:36.077
+Surefire is going to kill self fork JVM. The exit has elapsed 30 seconds after System.exit(0).
+

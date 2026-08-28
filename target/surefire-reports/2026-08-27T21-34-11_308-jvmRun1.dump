@@ -1,0 +1,130 @@
+# Created at 2026-08-27T21:44:27.845
+org.apache.maven.surefire.api.util.SurefireReflectionException: java.lang.OutOfMemoryError: Java heap space
+	at org.apache.maven.surefire.api.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:129)
+	at org.apache.maven.surefire.junitplatform.LauncherAdapter.executeWithCancellationToken(LauncherAdapter.java:68)
+	at org.apache.maven.surefire.junitplatform.LauncherAdapter.execute(LauncherAdapter.java:54)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:203)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:168)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:136)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+Caused by: java.lang.OutOfMemoryError: Java heap space
+	at org.mockito.internal.debugging.LocationImpl.lambda$static$0(LocationImpl.java:55)
+	at org.mockito.internal.debugging.LocationImpl$$Lambda/0x000001a5d747e538.apply(Unknown Source)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.lang.StackStreamFactory$StackFrameTraverser.tryAdvance(StackStreamFactory.java:647)
+	at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:129)
+	at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:527)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:513)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:150)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:647)
+	at org.mockito.internal.debugging.LocationImpl.lambda$getStackFrame$2(LocationImpl.java:96)
+	at org.mockito.internal.debugging.LocationImpl$$Lambda/0x000001a5d747f090.apply(Unknown Source)
+	at java.base/java.lang.StackStreamFactory$StackFrameTraverser.consumeFrames(StackStreamFactory.java:586)
+	at java.base/java.lang.StackStreamFactory$AbstractStackWalker.doStackWalk(StackStreamFactory.java:324)
+	at java.base/java.lang.StackStreamFactory$AbstractStackWalker.callStackWalk(Native Method)
+	at java.base/java.lang.StackStreamFactory$AbstractStackWalker.beginStackWalk(StackStreamFactory.java:410)
+	at java.base/java.lang.StackStreamFactory$AbstractStackWalker.walkHelper(StackStreamFactory.java:261)
+	at java.base/java.lang.StackStreamFactory$AbstractStackWalker.walk(StackStreamFactory.java:253)
+	at java.base/java.lang.StackWalker.walk(StackWalker.java:589)
+	at org.mockito.internal.debugging.LocationImpl.stackWalk(LocationImpl.java:134)
+	at org.mockito.internal.debugging.LocationImpl.getStackFrame(LocationImpl.java:90)
+	at org.mockito.internal.debugging.LocationImpl.<init>(LocationImpl.java:65)
+	at org.mockito.internal.debugging.LocationFactory$DefaultLocationFactory.create(LocationFactory.java:53)
+	at org.mockito.internal.debugging.LocationFactory.create(LocationFactory.java:21)
+	at org.mockito.internal.debugging.LocationFactory.create(LocationFactory.java:17)
+	at org.mockito.internal.creation.bytebuddy.access.MockMethodInterceptor.doIntercept(MockMethodInterceptor.java:58)
+	at org.mockito.internal.creation.bytebuddy.access.MockMethodInterceptor$DispatcherDefaultingToRealMethod.interceptAbstract(MockMethodInterceptor.java:163)
+	at com.uap.proiv.jobs.service.UserService$MockitoMock$pU0CFW9W.search(Unknown Source)
+	at com.uap.proiv.jobs.service.impl.UserJobAssignedServiceImpl.assign(UserJobAssignedServiceImpl.java:32)
+	at com.uap.proiv.jobs.service.impl.UserJobAssignedServiceImplTest.assign_succesOnePage(UserJobAssignedServiceImplTest.java:101)
+	at java.base/java.lang.invoke.LambdaForm$DMH/0x000001a5d7290000.invokeVirtual(LambdaForm$DMH)
+
+
+# Created at 2026-08-27T21:44:57.917
+Thread dump for process (16672@LenovoEve) after 30 seconds shutdown timeout:
+"main" 
+   java.lang.Thread.State: TIMED_WAITING
+        at java.base@21.0.11/jdk.internal.misc.Unsafe.park(Native Method)
+        at java.base@21.0.11/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
+        at java.base@21.0.11/java.util.concurrent.locks.AbstractQueuedSynchronizer.acquire(AbstractQueuedSynchronizer.java:790)
+        at java.base@21.0.11/java.util.concurrent.locks.AbstractQueuedSynchronizer.tryAcquireSharedNanos(AbstractQueuedSynchronizer.java:1160)
+        at java.base@21.0.11/java.util.concurrent.Semaphore.tryAcquire(Semaphore.java:415)
+        at app//org.apache.maven.surefire.booter.ForkedBooter.acquireOnePermit(ForkedBooter.java:524)
+        at app//org.apache.maven.surefire.booter.ForkedBooter.acknowledgedExit(ForkedBooter.java:374)
+        at app//org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:178)
+        at app//org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+        at app//org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+
+"Reference Handler" 
+   java.lang.Thread.State: RUNNABLE
+        at java.base@21.0.11/java.lang.ref.Reference.waitForReferencePendingList(Native Method)
+        at java.base@21.0.11/java.lang.ref.Reference.processPendingReferences(Reference.java:246)
+        at java.base@21.0.11/java.lang.ref.Reference$ReferenceHandler.run(Reference.java:208)
+
+"Finalizer" 
+   java.lang.Thread.State: WAITING
+        at java.base@21.0.11/java.lang.Object.wait0(Native Method)
+        at java.base@21.0.11/java.lang.Object.wait(Unknown Source)
+        at java.base@21.0.11/java.lang.Object.wait(Unknown Source)
+        at java.base@21.0.11/java.lang.ref.NativeReferenceQueue.await(NativeReferenceQueue.java:48)
+        at java.base@21.0.11/java.lang.ref.ReferenceQueue.remove0(ReferenceQueue.java:158)
+        at java.base@21.0.11/java.lang.ref.NativeReferenceQueue.remove(NativeReferenceQueue.java:89)
+        at java.base@21.0.11/java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:173)
+
+"Signal Dispatcher" 
+   java.lang.Thread.State: RUNNABLE
+
+"Attach Listener" 
+   java.lang.Thread.State: RUNNABLE
+
+"Notification Thread" 
+   java.lang.Thread.State: RUNNABLE
+
+"Common-Cleaner" 
+   java.lang.Thread.State: TIMED_WAITING
+        at java.base@21.0.11/jdk.internal.misc.Unsafe.park(Native Method)
+        at java.base@21.0.11/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
+        at java.base@21.0.11/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1886)
+        at java.base@21.0.11/java.lang.ref.ReferenceQueue.await(ReferenceQueue.java:71)
+        at java.base@21.0.11/java.lang.ref.ReferenceQueue.remove0(ReferenceQueue.java:143)
+        at java.base@21.0.11/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:218)
+        at java.base@21.0.11/jdk.internal.ref.CleanerImpl.run(CleanerImpl.java:140)
+        at java.base@21.0.11/java.lang.Thread.runWith(Thread.java:1596)
+        at java.base@21.0.11/java.lang.Thread.run(Thread.java:1583)
+        at java.base@21.0.11/jdk.internal.misc.InnocuousThread.run(InnocuousThread.java:186)
+
+"surefire-forkedjvm-stream-flusher" 
+   java.lang.Thread.State: TIMED_WAITING
+        at java.base@21.0.11/jdk.internal.misc.Unsafe.park(Native Method)
+        at java.base@21.0.11/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
+        at java.base@21.0.11/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1797)
+        at java.base@21.0.11/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+        at java.base@21.0.11/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+        at java.base@21.0.11/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1070)
+        at java.base@21.0.11/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+        at java.base@21.0.11/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+        at java.base@21.0.11/java.lang.Thread.runWith(Thread.java:1596)
+        at java.base@21.0.11/java.lang.Thread.run(Thread.java:1583)
+
+"surefire-forkedjvm-last-ditch-daemon-shutdown-thread-30s" 
+   java.lang.Thread.State: RUNNABLE
+        at java.management@21.0.11/sun.management.ThreadImpl.getThreadInfo1(Native Method)
+        at java.management@21.0.11/sun.management.ThreadImpl.getThreadInfo(ThreadImpl.java:187)
+        at app//org.apache.maven.surefire.booter.ForkedBooter.generateThreadDump(ForkedBooter.java:579)
+        at app//org.apache.maven.surefire.booter.ForkedBooter.access$600(ForkedBooter.java:79)
+        at app//org.apache.maven.surefire.booter.ForkedBooter$7.run(ForkedBooter.java:424)
+        at java.base@21.0.11/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+        at java.base@21.0.11/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+        at java.base@21.0.11/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+        at java.base@21.0.11/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+        at java.base@21.0.11/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+        at java.base@21.0.11/java.lang.Thread.runWith(Thread.java:1596)
+        at java.base@21.0.11/java.lang.Thread.run(Thread.java:1583)
+
+
+

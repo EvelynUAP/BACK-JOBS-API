@@ -42,7 +42,7 @@ public class UserController {
     public ResponseEntity<Object> update(@RequestBody  @Valid User request) {
         try {
             userService.update(request);
-            return ResponseEntity.ok("User created successfully");
+            return ResponseEntity.ok("User updated successfully");
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
         }

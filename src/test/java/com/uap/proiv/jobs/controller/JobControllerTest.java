@@ -1,5 +1,9 @@
 package com.uap.proiv.jobs.controller;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.uap.proiv.jobs.dto.AssignRequest;
+import com.uap.proiv.jobs.dto.Job;
+import com.uap.proiv.jobs.dto.UserJobAssigned;
 import com.uap.proiv.jobs.service.JobService;
 import com.uap.proiv.jobs.service.UserJobAssignedService;
 import com.uap.proiv.jobs.service.UserService;
@@ -156,7 +160,7 @@ public class JobControllerTest{
 
         List<UserJobAssigned> userJobAssignedList = new ArrayList<>();
         userJobAssignedList.add(new UserJobAssigned(users, job1));
-        userJobAssignedList.add(new UserJobAssigned(users.getFirst(), job2));
+        userJobAssignedList.add(new UserJobAssigned(List.of(users.getFirst()), job2));
 
         when(userJobAssignedService.assign()).thenReturn(userJobAssignedList);
 
