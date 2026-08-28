@@ -1,0 +1,35 @@
+-------------------------------------------------------------------------------
+Test set: com.uap.proiv.jobs.controller.JobControllerTest
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 3, Errors: 1, Skipped: 0, Time elapsed: 8.473 s <<< FAILURE! -- in com.uap.proiv.jobs.controller.JobControllerTest
+com.uap.proiv.jobs.controller.JobControllerTest.getUsers_success_initial_data -- Time elapsed: 8.153 s <<< FAILURE!
+java.lang.AssertionError: Status expected:<200> but was:<404>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:62)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:129)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$matcher$0(StatusResultMatchers.java:600)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:212)
+	at com.uap.proiv.jobs.controller.JobControllerTest.getUsers_success_initial_data(JobControllerTest.java:104)
+
+com.uap.proiv.jobs.controller.JobControllerTest.getUsers_success_set_page -- Time elapsed: 0.088 s <<< FAILURE!
+java.lang.AssertionError: Status expected:<200> but was:<404>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:62)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:129)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$matcher$0(StatusResultMatchers.java:600)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:212)
+	at com.uap.proiv.jobs.controller.JobControllerTest.getUsers_success_set_page(JobControllerTest.java:132)
+
+com.uap.proiv.jobs.controller.JobControllerTest.getUsers_exception -- Time elapsed: 0.080 s <<< FAILURE!
+java.lang.AssertionError: Range for response status value 404 expected:<SERVER_ERROR> but was:<CLIENT_ERROR>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:62)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:129)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$is5xxServerError$0(StatusResultMatchers.java:104)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:212)
+	at com.uap.proiv.jobs.controller.JobControllerTest.getUsers_exception(JobControllerTest.java:120)
+
+com.uap.proiv.jobs.controller.JobControllerTest.postAssign_success -- Time elapsed: 0.052 s <<< ERROR!
+java.lang.Error: 
+Unresolved compilation problem: 
+	The constructor UserJobAssigned(User, Job) is undefined
+
+	at com.uap.proiv.jobs.controller.JobControllerTest.postAssign_success(JobControllerTest.java:163)
+

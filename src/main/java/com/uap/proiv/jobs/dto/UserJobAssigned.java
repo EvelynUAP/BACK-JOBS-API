@@ -6,8 +6,8 @@ public class UserJobAssigned {
     private List<User> users;
     private Job job;
 
-    public UserJobAssigned(List<User> users, Job job) {
-        this.users = users;
+    public UserJobAssigned(List<User> users2, Job job) {
+        this.users = users2;
         this.job = job;
     }
 
